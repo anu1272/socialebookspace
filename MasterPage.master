@@ -1,0 +1,62 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script runat="server"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+ <title>Social-eBook'S'pace</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+      <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+  </head>
+<body>
+    <form id="form1" runat="server">
+  <div id="container">
+  <div id="top">
+    <div id="title">Social-eBook'S'pace</div>
+       </div>
+  <div id="middle">
+	  <div id="nav">
+          <asp:Panel ID="fMenuPanel" runat="server" Height="31px" style="margin-left: 0px" Width="506px">
+        <ul style="margin-left: 0px; margin-bottom: 28px;">    
+   	      <li><a href="Homepage.aspx">Home</a></li>
+            <li><a href="ViewProfileForm.aspx">Profile</a></li>
+	      <li> <a href="AddPostForm.aspx">Add</a></li>
+	      <li><a href="ViewPostForm.aspx">View</a></li>
+            <li><a href="DownloadForm.aspx">eBooks</a></li>
+	      <li><a href="ChangePassword.aspx">Password</a></li>
+	     <li><a href="LogoutMessageForm.aspx">Logout</a></li>
+        </ul>
+        </asp:Panel>
+      </div>
+       <div>
+     <asp:Label ID="fLoggedInUser" runat="server" Text=""></asp:Label>
+   </div>
+        <div id="content">
+	  <div id="side">
+	<h2>  <strong>Current Threads</strong> <br /></h2>
+	    <br />
+          <asp:ListView ID="currentThreadsListView" runat="server">
+             <ItemTemplate>
+                <h3> <asp:Label ID="fCurrentThreads" runat="server" Text='<%#(Eval("subject")) %>'></asp:Label></h3>
+              
+             </ItemTemplate>
+          </asp:ListView>
+		<br />
+		<br /></div>
+         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+       </div>
+  </div>
+</div>
+        </form>
+    <br />
+        <div id="bottom">&nbsp;</div>
+  
+<div id="footertext"> &nbsp;|&nbsp; &nbsp;|&nbsp; Copyright 2014-2024 &copy; &nbsp;Social-eBook'S'pace &nbsp; | &nbsp;
+     Designed by Ankit,Anil,Anurag & Anurag &nbsp;|&nbsp; &nbsp;|&nbsp;<br />
+    </div>
+</body>
+</html>
+
